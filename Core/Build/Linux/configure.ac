@@ -16,7 +16,7 @@ AC_PROG_CXX
 
 # Checks for libraries.
 
-AC_CHECK_LIB([png15], [png_create_read_struct],[], [
+AC_CHECK_LIB([png], [png_create_read_struct],[], [
 		echo "libpng is required!"
 		exit -1])
 

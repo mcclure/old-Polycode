@@ -14311,13 +14311,13 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
 # Checks for libraries.
 
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for png_create_read_struct in -lpng15" >&5
-$as_echo_n "checking for png_create_read_struct in -lpng15... " >&6; }
-if test "${ac_cv_lib_png15_png_create_read_struct+set}" = set; then :
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for png_create_read_struct in -lpng" >&5
+$as_echo_n "checking for png_create_read_struct in -lpng... " >&6; }
+if test "${ac_cv_lib_png_png_create_read_struct+set}" = set; then :
   $as_echo_n "(cached) " >&6
 else
   ac_check_lib_save_LIBS=$LIBS
-LIBS="-lpng15  $LIBS"
+LIBS="-lpng  $LIBS"
 cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 
@@ -14337,22 +14337,22 @@ return png_create_read_struct ();
 }
 _ACEOF
 if ac_fn_c_try_link "$LINENO"; then :
-  ac_cv_lib_png15_png_create_read_struct=yes
+  ac_cv_lib_png_png_create_read_struct=yes
 else
-  ac_cv_lib_png15_png_create_read_struct=no
+  ac_cv_lib_png_png_create_read_struct=no
 fi
 rm -f core conftest.err conftest.$ac_objext \
     conftest$ac_exeext conftest.$ac_ext
 LIBS=$ac_check_lib_save_LIBS
 fi
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_png15_png_create_read_struct" >&5
-$as_echo "$ac_cv_lib_png15_png_create_read_struct" >&6; }
-if test "x$ac_cv_lib_png15_png_create_read_struct" = x""yes; then :
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_png_png_create_read_struct" >&5
+$as_echo "$ac_cv_lib_png_png_create_read_struct" >&6; }
+if test "x$ac_cv_lib_png_png_create_read_struct" = x""yes; then :
   cat >>confdefs.h <<_ACEOF
-#define HAVE_LIBPNG15 1
+#define HAVE_LIBPNG 1
 _ACEOF
 
-  LIBS="-lpng15 $LIBS"
+  LIBS="-lpng $LIBS"
 
 else
 
