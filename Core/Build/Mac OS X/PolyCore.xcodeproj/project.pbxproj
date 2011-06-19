@@ -945,6 +945,14 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../Dependencies/libvorbis/include,
+					../../Dependencies/libogg/include,
+					/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/OpenAL.framework/Versions/A/Headers,
+					../../Dependencies/freetype/include,
+					../../Dependencies/libpng,
+					../../Dependencies/physfs,
+				);
 				OTHER_CFLAGS = "-DPHYSFS_SUPPORTS_ZIP";
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
