@@ -1,7 +1,7 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.67])
+#AC_PREREQ([2.67])
 
 AC_INIT([libPolyCore], [0.8.2], [dev@polycode.org])
 AC_CONFIG_FILES([Makefile])
