@@ -67,7 +67,7 @@ am_libPolyCore_a_OBJECTS = OSBasics.$(OBJEXT) \
 	PolyGLSLShader.$(OBJEXT) PolyGLSLShaderModule.$(OBJEXT) \
 	PolyGLTexture.$(OBJEXT) PolyGLVertexBuffer.$(OBJEXT) \
 	PolyImage.$(OBJEXT) PolyInputEvent.$(OBJEXT) \
-	PolyiPhoneCore.$(OBJEXT) PolyLabel.$(OBJEXT) \
+	PolyLabel.$(OBJEXT) \
 	PolyLogger.$(OBJEXT) PolyMaterial.$(OBJEXT) \
 	PolyMaterialManager.$(OBJEXT) PolyMatrix4.$(OBJEXT) \
 	PolyMesh.$(OBJEXT) PolyModule.$(OBJEXT) PolyObject.$(OBJEXT) \
@@ -141,7 +141,7 @@ am_libPolyCore_la_OBJECTS = libPolyCore_la-OSBasics.lo \
 	libPolyCore_la-PolyGLTexture.lo \
 	libPolyCore_la-PolyGLVertexBuffer.lo \
 	libPolyCore_la-PolyImage.lo libPolyCore_la-PolyInputEvent.lo \
-	libPolyCore_la-PolyiPhoneCore.lo libPolyCore_la-PolyLabel.lo \
+	libPolyCore_la-PolyLabel.lo \
 	libPolyCore_la-PolyLogger.lo libPolyCore_la-PolyMaterial.lo \
 	libPolyCore_la-PolyMaterialManager.lo \
 	libPolyCore_la-PolyMatrix4.lo libPolyCore_la-PolyMesh.lo \
@@ -364,7 +364,6 @@ libPolyCore_la_SOURCES = ../../Contents/Source/OSBasics.cpp \
 	../../Contents/Source/PolyGLVertexBuffer.cpp \
 	../../Contents/Source/PolyImage.cpp \
 	../../Contents/Source/PolyInputEvent.cpp \
-	../../Contents/Source/PolyiPhoneCore.cpp \
 	../../Contents/Source/PolyLabel.cpp \
 	../../Contents/Source/PolyLogger.cpp \
 	../../Contents/Source/PolyMaterial.cpp \
@@ -461,8 +460,6 @@ include_HEADERS = ../../Contents/Include/OSBasics.h \
 	../../Contents/Include/PolyImage.h \
 	../../Contents/Include/PolyInputEvent.h \
 	../../Contents/Include/PolyInputKeys.h \
-	../../Contents/Include/PolyiPhoneCore.h \
-	../../Contents/Include/Poly_iPhone.h \
 	../../Contents/Include/PolyLabel.h \
 	../../Contents/Include/PolyLogger.h \
 	../../Contents/Include/PolyMaterial.h \
@@ -549,7 +546,6 @@ libPolyCore_a_SOURCES = ../../Contents/Source/OSBasics.cpp \
 	../../Contents/Source/PolyGLVertexBuffer.cpp \
 	../../Contents/Source/PolyImage.cpp \
 	../../Contents/Source/PolyInputEvent.cpp \
-	../../Contents/Source/PolyiPhoneCore.cpp \
 	../../Contents/Source/PolyLabel.cpp \
 	../../Contents/Source/PolyLogger.cpp \
 	../../Contents/Source/PolyMaterial.cpp \
@@ -775,7 +771,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PolyVector3.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PolyVertex.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PolycodeView.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PolyiPhoneCore.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPolyCore_la-OSBasics.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPolyCore_la-PolyBezierCurve.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPolyCore_la-PolyBone.Plo@am__quote@
@@ -858,7 +853,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPolyCore_la-PolyVector3.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPolyCore_la-PolyVertex.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPolyCore_la-PolycodeView.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPolyCore_la-PolyiPhoneCore.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPolyCore_la-tinystr.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPolyCore_la-tinyxml.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPolyCore_la-tinyxmlerror.Plo@am__quote@
@@ -1266,20 +1260,6 @@ PolyInputEvent.obj: ../../Contents/Source/PolyInputEvent.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='../../Contents/Source/PolyInputEvent.cpp' object='PolyInputEvent.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o PolyInputEvent.obj `if test -f '../../Contents/Source/PolyInputEvent.cpp'; then $(CYGPATH_W) '../../Contents/Source/PolyInputEvent.cpp'; else $(CYGPATH_W) '$(srcdir)/../../Contents/Source/PolyInputEvent.cpp'; fi`
-
-PolyiPhoneCore.o: ../../Contents/Source/PolyiPhoneCore.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT PolyiPhoneCore.o -MD -MP -MF $(DEPDIR)/PolyiPhoneCore.Tpo -c -o PolyiPhoneCore.o `test -f '../../Contents/Source/PolyiPhoneCore.cpp' || echo '$(srcdir)/'`../../Contents/Source/PolyiPhoneCore.cpp
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/PolyiPhoneCore.Tpo $(DEPDIR)/PolyiPhoneCore.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='../../Contents/Source/PolyiPhoneCore.cpp' object='PolyiPhoneCore.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o PolyiPhoneCore.o `test -f '../../Contents/Source/PolyiPhoneCore.cpp' || echo '$(srcdir)/'`../../Contents/Source/PolyiPhoneCore.cpp
-
-PolyiPhoneCore.obj: ../../Contents/Source/PolyiPhoneCore.cpp
-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT PolyiPhoneCore.obj -MD -MP -MF $(DEPDIR)/PolyiPhoneCore.Tpo -c -o PolyiPhoneCore.obj `if test -f '../../Contents/Source/PolyiPhoneCore.cpp'; then $(CYGPATH_W) '../../Contents/Source/PolyiPhoneCore.cpp'; else $(CYGPATH_W) '$(srcdir)/../../Contents/Source/PolyiPhoneCore.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/PolyiPhoneCore.Tpo $(DEPDIR)/PolyiPhoneCore.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='../../Contents/Source/PolyiPhoneCore.cpp' object='PolyiPhoneCore.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o PolyiPhoneCore.obj `if test -f '../../Contents/Source/PolyiPhoneCore.cpp'; then $(CYGPATH_W) '../../Contents/Source/PolyiPhoneCore.cpp'; else $(CYGPATH_W) '$(srcdir)/../../Contents/Source/PolyiPhoneCore.cpp'; fi`
 
 PolyLabel.o: ../../Contents/Source/PolyLabel.cpp
 @am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT PolyLabel.o -MD -MP -MF $(DEPDIR)/PolyLabel.Tpo -c -o PolyLabel.o `test -f '../../Contents/Source/PolyLabel.cpp' || echo '$(srcdir)/'`../../Contents/Source/PolyLabel.cpp
@@ -2281,13 +2261,6 @@ libPolyCore_la-PolyInputEvent.lo: ../../Contents/Source/PolyInputEvent.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='../../Contents/Source/PolyInputEvent.cpp' object='libPolyCore_la-PolyInputEvent.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libPolyCore_la_CXXFLAGS) $(CXXFLAGS) -c -o libPolyCore_la-PolyInputEvent.lo `test -f '../../Contents/Source/PolyInputEvent.cpp' || echo '$(srcdir)/'`../../Contents/Source/PolyInputEvent.cpp
-
-libPolyCore_la-PolyiPhoneCore.lo: ../../Contents/Source/PolyiPhoneCore.cpp
-@am__fastdepCXX_TRUE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libPolyCore_la_CXXFLAGS) $(CXXFLAGS) -MT libPolyCore_la-PolyiPhoneCore.lo -MD -MP -MF $(DEPDIR)/libPolyCore_la-PolyiPhoneCore.Tpo -c -o libPolyCore_la-PolyiPhoneCore.lo `test -f '../../Contents/Source/PolyiPhoneCore.cpp' || echo '$(srcdir)/'`../../Contents/Source/PolyiPhoneCore.cpp
-@am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/libPolyCore_la-PolyiPhoneCore.Tpo $(DEPDIR)/libPolyCore_la-PolyiPhoneCore.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='../../Contents/Source/PolyiPhoneCore.cpp' object='libPolyCore_la-PolyiPhoneCore.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libPolyCore_la_CXXFLAGS) $(CXXFLAGS) -c -o libPolyCore_la-PolyiPhoneCore.lo `test -f '../../Contents/Source/PolyiPhoneCore.cpp' || echo '$(srcdir)/'`../../Contents/Source/PolyiPhoneCore.cpp
 
 libPolyCore_la-PolyLabel.lo: ../../Contents/Source/PolyLabel.cpp
 @am__fastdepCXX_TRUE@	$(LIBTOOL)  --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libPolyCore_la_CXXFLAGS) $(CXXFLAGS) -MT libPolyCore_la-PolyLabel.lo -MD -MP -MF $(DEPDIR)/libPolyCore_la-PolyLabel.Tpo -c -o libPolyCore_la-PolyLabel.lo `test -f '../../Contents/Source/PolyLabel.cpp' || echo '$(srcdir)/'`../../Contents/Source/PolyLabel.cpp
