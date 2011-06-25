@@ -91,7 +91,7 @@ am_libPolyCore_a_OBJECTS = OSBasics.$(OBJEXT) \
 	PolyTweenManager.$(OBJEXT) PolyVector2.$(OBJEXT) \
 	PolyVector3.$(OBJEXT) PolyVertex.$(OBJEXT) tinystr.$(OBJEXT) \
 	tinyxml.$(OBJEXT) tinyxmlerror.$(OBJEXT) \
-	tinyxmlparser.$(OBJEXT) PolySDLCore.$(OBJEXT) \
+	tinyxmlparser.$(OBJEXT) PolySDLCore.$(OBJEXT) GLee.$(OBJEXT) \
 	PolycodeView.$(OBJEXT)
 libPolyCore_a_OBJECTS = $(am_libPolyCore_a_OBJECTS)
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
@@ -166,7 +166,7 @@ am_libPolyCore_la_OBJECTS = libPolyCore_la-OSBasics.lo \
 	libPolyCore_la-PolyVertex.lo libPolyCore_la-tinystr.lo \
 	libPolyCore_la-tinyxml.lo libPolyCore_la-tinyxmlerror.lo \
 	libPolyCore_la-tinyxmlparser.lo libPolyCore_la-PolySDLCore.lo \
-	libPolyCore_la-PolycodeView.lo
+	libPolyCore_la-GLee.lo libPolyCore_la-PolycodeView.lo
 libPolyCore_la_OBJECTS = $(am_libPolyCore_la_OBJECTS)
 libPolyCore_la_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) \
@@ -401,7 +401,8 @@ libPolyCore_la_SOURCES = ../../Contents/Source/OSBasics.cpp \
 	../../Contents/Source/tinyxml.cpp \
 	../../Contents/Source/tinyxmlerror.cpp \
 	../../Contents/Source/tinyxmlparser.cpp \
-	../../Contents/Source/PolySDLCore.cpp PolycodeView.cpp
+	../../Contents/Source/PolySDLCore.cpp \
+	../../Contents/Source/GLee.cpp PolycodeView.cpp
 libPolyCore_la_CXXFLAGS = $(AM_CXXFLAGS)
 libPolyCore_la_LDFLAGS = -module -export-dynamic $(LDFLAGS)
 include_HEADERS = ../../Contents/Include/OSBasics.h \
@@ -497,7 +498,9 @@ include_HEADERS = ../../Contents/Include/OSBasics.h \
 	../../Contents/Include/PolyWinCore.h \
 	../../Contents/Include/tinystr.h \
 	../../Contents/Include/tinyxml.h \
-	../../Contents/Include/PolySDLCore.h PolycodeView.h
+	../../Contents/Include/PolySDLCore.h \
+	../../Contents/Include/GLee.h \
+	../../Contents/Include/PolyGLHeaders.h PolycodeView.h
 noinst_LIBRARIES = libPolyCore.a
 libPolyCore_a_SOURCES = ../../Contents/Source/OSBasics.cpp \
 	../../Contents/Source/PolyBezierCurve.cpp \
@@ -583,7 +586,8 @@ libPolyCore_a_SOURCES = ../../Contents/Source/OSBasics.cpp \
 	../../Contents/Source/tinyxml.cpp \
 	../../Contents/Source/tinyxmlerror.cpp \
 	../../Contents/Source/tinyxmlparser.cpp \
-	../../Contents/Source/PolySDLCore.cpp PolycodeView.cpp
+	../../Contents/Source/PolySDLCore.cpp \
+	../../Contents/Source/GLee.cpp PolycodeView.cpp
 all: all-am
 
 .SUFFIXES:
@@ -664,6 +668,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/GLee.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/OSBasics.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PolyBezierCurve.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PolyBone.Po@am__quote@
@@ -746,6 +751,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PolyVector3.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PolyVertex.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PolycodeView.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPolyCore_la-GLee.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPolyCore_la-OSBasics.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPolyCore_la-PolyBezierCurve.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libPolyCore_la-PolyBone.Plo@am__quote@
@@ -2048,6 +2054,20 @@ PolySDLCore.obj: ../../Contents/Source/PolySDLCore.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o PolySDLCore.obj `if test -f '../../Contents/Source/PolySDLCore.cpp'; then $(CYGPATH_W) '../../Contents/Source/PolySDLCore.cpp'; else $(CYGPATH_W) '$(srcdir)/../../Contents/Source/PolySDLCore.cpp'; fi`
 
+GLee.o: ../../Contents/Source/GLee.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT GLee.o -MD -MP -MF $(DEPDIR)/GLee.Tpo -c -o GLee.o `test -f '../../Contents/Source/GLee.cpp' || echo '$(srcdir)/'`../../Contents/Source/GLee.cpp
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/GLee.Tpo $(DEPDIR)/GLee.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='../../Contents/Source/GLee.cpp' object='GLee.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o GLee.o `test -f '../../Contents/Source/GLee.cpp' || echo '$(srcdir)/'`../../Contents/Source/GLee.cpp
+
+GLee.obj: ../../Contents/Source/GLee.cpp
+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT GLee.obj -MD -MP -MF $(DEPDIR)/GLee.Tpo -c -o GLee.obj `if test -f '../../Contents/Source/GLee.cpp'; then $(CYGPATH_W) '../../Contents/Source/GLee.cpp'; else $(CYGPATH_W) '$(srcdir)/../../Contents/Source/GLee.cpp'; fi`
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/GLee.Tpo $(DEPDIR)/GLee.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='../../Contents/Source/GLee.cpp' object='GLee.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o GLee.obj `if test -f '../../Contents/Source/GLee.cpp'; then $(CYGPATH_W) '../../Contents/Source/GLee.cpp'; else $(CYGPATH_W) '$(srcdir)/../../Contents/Source/GLee.cpp'; fi`
+
 libPolyCore_la-OSBasics.lo: ../../Contents/Source/OSBasics.cpp
 @am__fastdepCXX_TRUE@	$(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libPolyCore_la_CXXFLAGS) $(CXXFLAGS) -MT libPolyCore_la-OSBasics.lo -MD -MP -MF $(DEPDIR)/libPolyCore_la-OSBasics.Tpo -c -o libPolyCore_la-OSBasics.lo `test -f '../../Contents/Source/OSBasics.cpp' || echo '$(srcdir)/'`../../Contents/Source/OSBasics.cpp
 @am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/libPolyCore_la-OSBasics.Tpo $(DEPDIR)/libPolyCore_la-OSBasics.Plo
@@ -2642,6 +2662,13 @@ libPolyCore_la-PolySDLCore.lo: ../../Contents/Source/PolySDLCore.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='../../Contents/Source/PolySDLCore.cpp' object='libPolyCore_la-PolySDLCore.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libPolyCore_la_CXXFLAGS) $(CXXFLAGS) -c -o libPolyCore_la-PolySDLCore.lo `test -f '../../Contents/Source/PolySDLCore.cpp' || echo '$(srcdir)/'`../../Contents/Source/PolySDLCore.cpp
+
+libPolyCore_la-GLee.lo: ../../Contents/Source/GLee.cpp
+@am__fastdepCXX_TRUE@	$(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libPolyCore_la_CXXFLAGS) $(CXXFLAGS) -MT libPolyCore_la-GLee.lo -MD -MP -MF $(DEPDIR)/libPolyCore_la-GLee.Tpo -c -o libPolyCore_la-GLee.lo `test -f '../../Contents/Source/GLee.cpp' || echo '$(srcdir)/'`../../Contents/Source/GLee.cpp
+@am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/libPolyCore_la-GLee.Tpo $(DEPDIR)/libPolyCore_la-GLee.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='../../Contents/Source/GLee.cpp' object='libPolyCore_la-GLee.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libPolyCore_la_CXXFLAGS) $(CXXFLAGS) -c -o libPolyCore_la-GLee.lo `test -f '../../Contents/Source/GLee.cpp' || echo '$(srcdir)/'`../../Contents/Source/GLee.cpp
 
 libPolyCore_la-PolycodeView.lo: PolycodeView.cpp
 @am__fastdepCXX_TRUE@	$(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libPolyCore_la_CXXFLAGS) $(CXXFLAGS) -MT libPolyCore_la-PolycodeView.lo -MD -MP -MF $(DEPDIR)/libPolyCore_la-PolycodeView.Tpo -c -o libPolyCore_la-PolycodeView.lo `test -f 'PolycodeView.cpp' || echo '$(srcdir)/'`PolycodeView.cpp
