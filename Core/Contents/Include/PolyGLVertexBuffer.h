@@ -46,7 +46,7 @@ namespace Polycode {
 		GLuint getNormalBufferID();
 		GLuint getColorBufferID();
 		
-	private:
+	protected:
 		
 		GLuint vertexBufferID;
 		GLuint texCoordBufferID;

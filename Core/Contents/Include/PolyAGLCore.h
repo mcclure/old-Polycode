@@ -88,7 +88,7 @@ namespace Polycode {
 		
 		vector<OSXEvent> osxEvents;
 		
-	private:
+	protected:
 		
 		
 		uint64_t initTime;

@@ -106,7 +106,7 @@ namespace Polycode {
 		
 		NSOpenGLContext *context;
 		
-	private:	
+	protected:	
 		PolycodeView *glView;
 		
 		uint64_t initTime;		

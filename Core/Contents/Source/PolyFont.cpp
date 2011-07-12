@@ -24,35 +24,32 @@
 
 using namespace Polycode;
 
-Font::Font(String fileName) : buffer(NULL), valid(false) {
+Font::Font(String fileName) {
 	FT_Library FTLibrary;
 	FT_Init_FreeType(&FTLibrary);
 	
+	loaded = false;
+	buffer = NULL;
 	OSFILE *file = OSBasics::open(fileName, "rb");
-	long progsize = 0;
-	
-	if (file) {
+	if(file) {
 		OSBasics::seek(file, 0, SEEK_END);	
-		progsize = OSBasics::tell(file);
+		long progsize = OSBasics::tell(file);
 		OSBasics::seek(file, 0, SEEK_SET);
 		buffer = (unsigned char*)malloc(progsize);
 		memset(buffer, 0, progsize);
 		OSBasics::read(buffer, progsize, 1, file);
-		OSBasics::close(file);
-		valid = true;
-	} else {
-		Logger::log("File not found loading font %s\n", fileName.c_str());
-	}
-
-	if(valid && FT_New_Memory_Face(FTLibrary, buffer, progsize, 0, &ftFace) != 0) {
-		Logger::log("Error loading font %s\n", fileName.c_str());
-		valid = false;
-	}
 	
-	if (valid)
+		valid = true;
+		if(FT_New_Memory_Face(FTLibrary, buffer, progsize, 0, &ftFace) != 0) {
+			Logger::log("Error loading font %s\n", fileName.c_str());
+			valid = false;
+		}
+	
 		FT_Select_Charmap(ftFace, FT_ENCODING_UNICODE);	
-	//FT_New_Face(FTLibrary, fileName.c_str(), 0, &ftFace);	
-//	free(buffer);
+		loaded = true;
+	} else {
+		Logger::log("Invalid font file specified (%s)\n", fileName.c_str());	
+	}
 }
 
 bool Font::isValid() {
@@ -60,7 +57,9 @@ bool Font::isValid() {
 }
 
 Font::~Font() {
-	free(buffer);
+	if(buffer) {
+		free(buffer);
+	}
 }
 
 FT_Face Font::getFace() {
