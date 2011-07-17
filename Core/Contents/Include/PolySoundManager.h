@@ -26,7 +26,7 @@
 #include "PolyGlobals.h"
 #include <stdio.h>
 
-#if defined(__APPLE__) && defined(__MACH__)
+#if (defined(__APPLE__) && defined(__MACH__) || defined(_MINGW))
 	#include "al.h"
 	#include "alc.h"
 #else

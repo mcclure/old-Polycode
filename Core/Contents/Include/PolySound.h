@@ -29,7 +29,7 @@
 #include <string>
 #include <vector>
 
-#if defined(__APPLE__) && defined(__MACH__)
+#if (defined(__APPLE__) && defined(__MACH__) || defined(_MINGW))
 	#include "al.h"
 	#include "alc.h"
 #else

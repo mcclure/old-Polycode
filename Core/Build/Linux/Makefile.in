@@ -427,7 +427,6 @@ include_HEADERS = ../../Contents/Include/OSBasics.h \
 	../../Contents/Include/PolyFixedShader.h \
 	../../Contents/Include/PolyFont.h \
 	../../Contents/Include/PolyFontManager.h \
-	../../Contents/Include/PolyGenericScene.h \
 	../../Contents/Include/PolyGLCubemap.h \
 	../../Contents/Include/PolyGLES1Renderer.h \
 	../../Contents/Include/PolyGLES1Texture.h \
